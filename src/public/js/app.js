@@ -1,1 +1,1 @@
-console.log("Client-side JS Working ");
+const socket = new WebSocket("ws://127.0.0.1:3000");

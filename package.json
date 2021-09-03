@@ -16,7 +16,8 @@
 	"homepage": "https://github.com/Hardly-Human/Chat-Application-with-WebSockets#readme",
 	"dependencies": {
 		"express": "^4.17.1",
-		"pug": "^3.0.2"
+		"pug": "^3.0.2",
+		"ws": "^8.2.1"
 	},
 	"devDependencies": {
 		"nodemon": "^2.0.12"
