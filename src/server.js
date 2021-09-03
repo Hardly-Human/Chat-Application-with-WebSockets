@@ -1,4 +1,5 @@
 const path = require("path");
+const http = require("http");
 const express = require("express");
 
 const app = express();
@@ -14,4 +15,7 @@ app.get("/", (req, res) => {
 	res.render("home");
 });
 
-app.listen(3000, () => console.log("Listening on PORT : 3000"));
+// creating a http server from Express app
+const server = http.createServer(app);
+
+server.listen(3000, () => console.log("Listening at PORT : 3000"));
