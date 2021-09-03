@@ -21,7 +21,8 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 wss.on("connection", (socket) => {
-	console.log(socket);
+	console.log("Connected to Browser ✅");
+	socket.send("Hello");
 });
 
 server.listen(3000, () => console.log("Listening at PORT : 3000"));
