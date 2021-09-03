@@ -6,11 +6,19 @@
 		"type": "git",
 		"url": "git+https://github.com/Hardly-Human/Chat-Application-with-WebSockets.git"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"scripts": {
+		"dev": "nodemon src/server.js"
+	},
+	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/Hardly-Human/Chat-Application-with-WebSockets/issues"
 	},
-	"homepage": "https://github.com/Hardly-Human/Chat-Application-with-WebSockets#readme"
+	"homepage": "https://github.com/Hardly-Human/Chat-Application-with-WebSockets#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"pug": "^3.0.2"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.12"
+	}
 }
