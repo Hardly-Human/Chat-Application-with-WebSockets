@@ -20,9 +20,28 @@ app.get("/", (req, res) => {
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
+const sockets = [];
+
 wss.on("connection", (socket) => {
+	sockets.push(socket);
+	socket["nickname"] = "Anonymous";
 	console.log("Connected to Browser ✅");
-	socket.send("Hello");
+
+	socket.on("message", (msg) => {
+		const message = JSON.parse(msg);
+		switch (message.type) {
+			case "nickname":
+				socket.nickname = message.payload;
+
+				break;
+			case "message":
+				sockets.forEach((aSocket) =>
+					aSocket.send(`${socket.nickname} : ${message.payload}`)
+				);
+
+				break;
+		}
+	});
 });
 
 server.listen(3000, () => console.log("Listening at PORT : 3000"));

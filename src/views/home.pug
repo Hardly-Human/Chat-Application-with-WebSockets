@@ -4,7 +4,33 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="https://unpkg.com/mvp.css")
         title Chat App
+        style.
+            main{
+                display: flex;
+                justify-content: space-between;
+            }
+            form, div{
+                width : 300px;
+            }
+            ul{
+                overflow: scroll;
+                height: 200px;
+            }
     body
-        h1 Hello Chat App
+        header
+            h1 Chat App
+        main
+            form.nicknameForm
+                h2 Nickname
+                input(type="text", placeholder="Enter Your Nickname")
+                button Save
+            .messages
+                h2 Chat Messages
+                ul
+            form.messageForm
+                h2 Message Form
+                input(type="text", placeholder="Enter your Message",required)
+                button Send
         script(src="/public/js/app.js")
